@@ -9,16 +9,15 @@ Which one is a linear data structure?
 Array
 Stack
 Queue
-Push
 All
 # =========================================================
-Which one is no a linear data structure?
-Stack
+Which one is not a linear data structure?
 Tree
+Linked List
 Graph
 All
 # =========================================================
-Which one is no a linear data structure?
+Which one is not a linear data structure?
 Stack
 Tree
 Graph
@@ -37,6 +36,12 @@ Tree
 All
 # =========================================================
 Stack is -
+LIFO
+FIFO
+FILO
+LILO
+# =========================================================
+Queue is -
 LIFO
 FIFO
 FILO
