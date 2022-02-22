@@ -1,0 +1,55 @@
+# =========================================================
+Which operation is done to insert an element in the stack?
+Insert
+Add
+Push
+None of the above
+# =========================================================
+Which one is a linear data structure?
+Array
+Stack
+Queue
+Push
+All
+# =========================================================
+Which one is no a linear data structure?
+Stack
+Tree
+Graph
+All
+# =========================================================
+Which one is no a linear data structure?
+Stack
+Tree
+Graph
+All
+# =========================================================
+Which data structure has fixed size?
+Array
+Linked List
+Graph
+Tree
+# =========================================================
+Which data structure can be implemented using linked list?
+Stack
+Queue
+Tree
+All
+# =========================================================
+Stack is -
+LIFO
+FIFO
+FILO
+LILO
+# =========================================================
+The function that deletes values from a queue is called
+pop
+peek
+enque
+deque
+# =========================================================
+Degree of the leaf node of the tree is -
+0
+1
+2
+3

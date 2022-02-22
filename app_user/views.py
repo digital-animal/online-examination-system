@@ -28,7 +28,7 @@ from django.views.decorators.csrf import csrf_protect
 
 def create_username(first_name, last_name, user_number):
     # return f"{first_name.strip()}{last_name.strip()}_{str(user_number).strip()}"
-    return f"{first_name.strip().lower()}{last_name.strip().lower()}_{user_number}"
+    return f"{first_name.strip().lower()}{last_name.strip().lower()}"
 
 
 
