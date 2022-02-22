@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="card bg-light mt-5">
+        <div class="card-body">
+            <form action="{% url 'delete_question' question_id %}" method="POST">
+                {% csrf_token %} 
+                <p>Are you sure you want to delete question no <strong>{{question_id}}?</strong></p>
+                <a href="{% url 'profile' %}" class="btn btn-warning btn-lg">Cancel</a>
+                <button type="submit" class="btn btn-danger btn-lg">Delete</button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock content %}

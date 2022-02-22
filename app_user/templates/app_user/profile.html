@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+
+    <div class="card bg-light m-5">
+        <div class="card-body">
+            <h3 class="card-text">{{ message }}</h3>
+            <div class="media">
+                
+                <div class="media-body classlist-group">
+                    <h5>Username: <strong>{{ user.username }}</strong> </h5>
+                    <hr>
+                    {% if user.email %}
+                        <h5>Email: <strong> {{ user.email }}</strong></h5>
+                    {% endif %}
+                    <hr>
+                    {% if request_examiner  %}
+                        <h5>Role: <strong>Examiner</strong></h5>
+                    {% elif request_student %}
+                        <h5>Role: <strong>Student</strong></h5>
+                    {% endif %}
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+        <div class="profile-update p-2">
+            <a href="" class="btn btn-lg btn-warning ml-2 float-right">Update Profile</a>
+            <a href="{% url 'password_change' %}" class="btn btn-lg btn-info ml-2 float-right">Change Password</a>
+        </div>
+    </div>
+
+    {% else %}
+        <p>You are not authorized to view this page</p>
+        <div>
+            <p>Have an Account? Login <a href="{% url 'login' %}">here</a></p>
+            <p>Need an Account? Register <a href="{% url 'register_choice' %}">here</a></p>
+        </div>
+    {% endif %}
+
+    <div style="margin-top: 50px;"></div>
+
+{% endblock content %}

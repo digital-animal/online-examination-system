@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card m-2 mt-5">
+        <div class="card-body">
+            <h3 class="card-title h1 text-center text-info">{{ text }}</h3>
+        </div>
+        
+    </div>
+    <div class="d-flex flex-direction-row mt-2 mx-2">
+        <div class="card bg-light p-2 m-2 w-100">
+            <div class="card-body bg-info">
+                <div class="card-title h1">Student</div>
+                <div class="card-text h5 text-dark">Take an exam and test your skill</div>
+                <a href="{% url 'create_exam' %}" class="btn btn-sm btn-warning">Test Yourself</a>
+            </div>
+        </div>
+        <br>
+        <div class="card bg-light p-2 mx-2 my-2 w-100">
+            <div class="card-body bg-danger">
+                <div class="card-title h1">Examiner</div>
+                <div class="card-text h5 text-dark">Add questions to the question pool</div>
+                <a href="{% url 'add_question' %}" class="btn btn-sm btn-success">Contribute</a>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock content %}

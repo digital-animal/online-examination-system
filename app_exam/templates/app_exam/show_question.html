@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Questions for Course No {{ course_id }}</h3>
+    <table class="table border bg-light">
+        <tbody>
+            {% for question in question_list %}
+                <tr class="text-light bg-dark">
+                    <td>{{ forloop.counter }}. {{ question.question_text }}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{% url 'edit_question' question.question_id %}" class="btn btn-info float-right">Edit</a>
+                        <a href="{% url 'delete_question' question.question_id %}" class="btn btn-danger float-right ml-2 mr-2">Delete</a>
+                    </td>
+                </tr>
+
+                {% if question.choice_1 %}
+                <tr class="list-group">
+                    <td>
+                        <label for="mcq">a) {{ question.choice_1}}</label>
+                    </td>
+                </tr>
+                {% endif %}
+
+                {% if question.choice_2 %}
+                <tr class="list-group">
+                    <td>
+                        <label for="mcq">b) {{ question.choice_2}}</label>
+                    </td>
+                </tr>
+                {% endif %}
+
+                {% if question.choice_3 %}
+                <tr class="list-group">
+                    <td>
+                        <label for="mcq">c) {{ question.choice_3}}</label>
+                    </td>
+                </tr>
+                {% endif %}
+
+                {% if question.choice_4 %}
+                <tr class="list-group">
+                    <td>
+                        <label for="mcq">d) {{ question.choice_4}}</label>
+                    </td>
+                </tr>
+                {% endif %}
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock content %}
+
+
+

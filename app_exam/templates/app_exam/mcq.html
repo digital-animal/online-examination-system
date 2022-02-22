@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3 class="text-center mt-5 mb-3">Questions</h3>
+    <form action="{% url 'result' %}" method="POST">
+        {% csrf_token %}
+        <table class="table border bg-light">
+            <tbody>
+                {% for question in question_list %}
+                    <tr class="text-light bg-dark">
+                        <td>{{ forloop.counter }}. {{ question.question_text }}</td>
+                    </tr>
+
+
+                    {% if question.choice_1 %}
+                    <tr class="list-group">
+                        <td>
+                            <label for="mcq">a) {{ question.choice_1.choice_text }}</label>
+                            <input type="radio" name="{{ question.question_id }}" value="{{ question.choice_1.choice_id }}" id="mcq" class="float-right">
+                        </td>
+                    </tr>
+                    {% endif %}
+
+
+                    {% if question.choice_2 %}
+                    <tr class="list-group">
+                        <td>
+                            <label for="mcq">b) {{ question.choice_2.choice_text }}</label>
+                            <input type="radio" name="{{ question.question_id }}" value="{{ question.choice_2.choice_id }}" id="mcq" class="float-right">
+                        </td>
+                    </tr>
+                    {% endif %}
+       
+                    
+                    {% if question.choice_3 %}
+                    <tr class="list-group">
+                        <td>
+                            <label for="mcq">c) {{ question.choice_3.choice_text }}</label>
+                            <input type="radio" name="{{ question.question_id }}" value="{{ question.choice_3.choice_id }}" id="mcq" class="float-right">
+                        </td>
+                    </tr>
+                    {% endif %}
+          
+
+                    {% if question.choice_4 %}
+                    <tr class="list-group">
+                        <td>
+                            <label for="mcq">d) {{ question.choice_4.choice_text }}</label>
+                            <input type="radio" name="{{ question.question_id }}" value="{{ question.choice_4.choice_id }}" id="mcq" class="float-right">
+                        </td>
+                    </tr>
+                    {% endif %}
+              
+
+                {% endfor %}
+            </tbody>
+
+        </table>
+        <button type="submit" value="Submit" class="btn btn-lg btn-info float-right">Submit</button>
+    </form>
+
+
+{% endblock content %}
+
+
+

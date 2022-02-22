@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div>
+        <form action="{% url 'edit_choice' %}" method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <h5>Question</h5>
+                <div class="card bg-dark">
+                    <div class="card-body text-light">
+                        <div class="card-text">
+                            {{ question_text }}
+                        </div>
+                    </div>
+                </div>
+  
+                <legend>Update Choice</legend>
+
+                {{ formset.management_form }}
+
+                {% for form in formset %}
+                    <div class="card mt-5 bg-light">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <label>Choice {{ forloop.counter }}</label>
+                            </div>
+                            <div class="card-text">
+                                {{ form|crispy }}
+                            </div>
+                        </div>                        
+                    </div>
+
+                {% endfor %}
+                
+                <button type="submit" class="btn btn-info btn-lg float-right">Save Update</button>
+            </fieldset>
+        </form>
+    </div>
+    
+{% endblock content %}
