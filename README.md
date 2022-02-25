@@ -76,3 +76,9 @@ $ Password (again): newuser
 # then open in the link 127.0.0.1:8000/admin in browser and login
 ```
 
+### Project Demonstration Link
+
+```bash
+https://drive.google.com/file/d/1rCMAefnw2K2wvnQwAr1rzJskvFPXiRgj/view?usp=sharing
+```
+
