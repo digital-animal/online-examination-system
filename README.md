@@ -34,7 +34,7 @@ show user; -- to show the currently connected user
 alter user dj identified by dj account unlock;
 ```
 
-### Lister Service (If Required)
+### Listener Service (If Required)
 
 ```bash
 lsnrctl reload # to restart listener
